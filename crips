@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>SäkkijärviRP Crips</title>
+  <style>
+    /* Yleinen tyyli */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* Taustakuva ja yleinen asetelma */
+    .home-page {
+      background-image: url('https://gta5mod.net/wp-content/uploads/2021/04/LA-Nayba-Hood.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 16px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      transition: 0.3s ease;
+    }
+
+    h1:hover {
+      text-shadow: 0 0 20px #00f, 0 0 30px #00f;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #7289da;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .menu-options {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .menu-options a {
+      color: white;
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+    }
+
+    .menu:hover .menu-options {
+      display: block;
+    }
+
+    /* SäkkijärviRP:n taustakuva */
+    .sakkijarvi-page {
+      background-image: url('https://gta5mod.net/wp-content/uploads/2021/04/LA-Nayba-Hood4.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Poliisi- ja possukuva */
+    .police-page {
+      background-color: rgba(255, 255, 255, 0.8);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .police-page img {
+      width: 70%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Alkusivu -->
+<div class="home-page">
+  <div class="overlay">
+    <h1>SäkkijärviRP Crips</h1>
+    <a class="btn" href="https://discord.gg/vnWyEg5atM" target="_blank">Liity Crips Discordiin</a><br>
+  </div>
+
+  <!-- Kolme pistettä oikeassa yläkulmassa -->
+  <div class="menu">
+    &#x22EE;
+    <div class="menu-options">
+      <a href="javascript:void(0)" onclick="openSakkijarvi()">SäkkijärviRP</a>
+      <a href="javascript:void(0)" onclick="openPolice()">Poliisi</a>
+    </div>
+  </div>
+</div>
+
+<!-- SäkkijärviRP -sivun sisältö -->
+<div id="sakkijarvi" class="sakkijarvi-page" style="display:none;">
+  <div class="overlay">
+    <h1>SäkkijärviRP</h1>
+    <a class="btn" href="https://discord.gg/UwXWxtWzmH" target="_blank">Liity Säkkijärven Discordiin</a><br>
+    <a class="btn" href="https://youtu.be/5ic-V4HB6vs?si=_aGdh1m4XxDU00sV" target="_blank">Jengi tilat</a><br>
+    <button class="btn" onclick="goHome()">Palaa Alkusivulle</button>
+  </div>
+</div>
+
+<!-- Poliisi -sivun sisältö -->
+<div id="police" class="police-page" style="display:none;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Pig_farm_Vampula_9.jpg" alt="Poliisi">
+  <button class="btn" onclick="goHome()">Palaa Alkusivulle</button>
+</div>
+
+<script>
+  function openSakkijarvi() {
+    document.querySelector('.home-page').style.display = 'none';
+    document.querySelector('#sakkijarvi').style.display = 'block';
+  }
+
+  function openPolice() {
+    document.querySelector('.home-page').style.display = 'none';
+    document.querySelector('#police').style.display = 'block';
+  }
+
+  function goHome() {
+    document.querySelector('.home-page').style.display = 'block';
+    document.querySelector('#sakkijarvi').style.display = 'none';
+    document.querySelector('#police').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
